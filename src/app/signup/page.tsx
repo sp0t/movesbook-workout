@@ -596,7 +596,7 @@ export default function SignupPage() {
                       <LabeledSelect
                         label="Athlete type"
                         options={roleSpecificOptions.usertypes ?? []}
-                        value={form.athleteUsertypeId}
+                        value={form.athleteUsertypeId ?? ""}
                         onChange={handleInput("athleteUsertypeId")}
                         required
                       />
@@ -608,7 +608,7 @@ export default function SignupPage() {
                           <LabeledSelect
                             label="Coach type"
                             options={roleSpecificOptions.usertypes ?? []}
-                            value={form.coachUsertypeId}
+                            value={form.coachUsertypeId ?? ""}
                             onChange={handleInput("coachUsertypeId")}
                             required
                           />
@@ -617,7 +617,7 @@ export default function SignupPage() {
                           <LabeledSelect
                             label="Team type"
                             options={roleSpecificOptions.teamTypes ?? []}
-                            value={form.coachTeamType}
+                            value={form.coachTeamType ?? ""}
                             onChange={handleInput("coachTeamType")}
                             required
                           />
@@ -629,7 +629,7 @@ export default function SignupPage() {
                       <LabeledSelect
                         label="Team type"
                         options={roleSpecificOptions.usertypes ?? []}
-                        value={form.teamUsertypeId}
+                        value={form.teamUsertypeId ?? ""}
                         onChange={handleInput("teamUsertypeId")}
                         required
                       />
@@ -639,7 +639,7 @@ export default function SignupPage() {
                       <LabeledSelect
                         label="Club category"
                         options={roleSpecificOptions.clubTypes ?? []}
-                        value={form.clubTypeId}
+                        value={form.clubTypeId ?? ""}
                         onChange={handleInput("clubTypeId")}
                         required
                       />
