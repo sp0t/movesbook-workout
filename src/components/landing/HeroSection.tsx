@@ -2,58 +2,108 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { AppHeader } from "../layout/AppHeader";
 
 export function HeroSection() {
   return (
-    <section className="relative flex min-h-[520px] flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-slate-950 px-6 py-16 text-white shadow-2xl sm:min-h-[620px] sm:px-10 lg:px-16">
-      <div className="absolute inset-0">
-        <Image
-          src="/dashboard.png"
-          alt="Movesbook dashboard"
-          fill
-          priority
-          className="object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.35)_0%,rgba(20,27,43,0.55)_60%,rgba(15,21,32,0.75)_100%)]" />
-      </div>
+    <section className="relative flex min-h-[620px] w-full flex-col overflow-hidden rounded-3xl border border-slate-200 bg-black text-white shadow-2xl">
+      <Image
+        src="/dashboard.png"
+        alt="Movesbook dashboard"
+        fill
+        priority
+        className="object-cover object-center"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/55" />
 
-      <div className="relative flex w-full flex-col gap-10">
-        <AppHeader variant="transparent" />
-        <div className="flex w-full flex-col gap-8">
-          <div className="inline-flex items-center gap-2 self-start rounded-full border border-white/20 bg-white/10 px-5 py-2 text-sm font-semibold uppercase tracking-[0.3em] text-white">
-            Movesbook platform
-          </div>
-          <h1 className="text-5xl font-semibold leading-tight sm:text-6xl lg:text-7xl">
-            Train, coordinate, and grow your sport ecosystem.
-          </h1>
-          <p className="max-w-3xl text-xl text-slate-100">
-            Movesbook unites athletes, coaches, teams, and clubs around a single planning canvas. Design workouts, share
-            moveframes, and automate reporting in one fluid workspace.
-          </p>
-          <div className="flex flex-wrap items-center gap-4">
+      <header className="relative z-10 flex flex-col gap-6 px-6 py-6 sm:px-10 lg:px-16">
+        <div className="flex flex-wrap items-center justify-between gap-4 text-xs font-semibold uppercase tracking-[0.25em] text-white/85">
+          <nav className="flex flex-wrap items-center gap-3">
+            <Link className="rounded-full bg-white/10 px-4 py-2 transition hover:bg-white/20" href="#">
+              Support
+            </Link>
+            <Link className="rounded-full bg-white/10 px-4 py-2 transition hover:bg-white/20" href="#">
+              Forum
+            </Link>
+            <Link className="rounded-full bg-white/10 px-4 py-2 transition hover:bg-white/20" href="#">
+              Blog
+            </Link>
+          </nav>
+          <div className="flex items-center gap-3 text-white/60">
+            <span>FB</span>
+            <span>IG</span>
+            <span>YT</span>
+            <span>TW</span>
+            <span className="rounded-full bg-white/10 px-3 py-2 text-[12px]">Language</span>
             <Link
               href="/login"
-              className="rounded-full bg-emerald-400 px-7 py-3.5 text-base font-semibold text-slate-950 shadow-lg shadow-emerald-400/40 transition hover:bg-emerald-300"
+              className="rounded-full border border-white/60 px-4 py-2 text-[12px] font-semibold uppercase tracking-wide text-white transition hover:bg-white/20"
             >
-              Log in
+              Login
             </Link>
             <Link
               href="/signup"
-              className="rounded-full border border-white/50 px-7 py-3.5 text-base font-semibold text-white transition hover:border-white/70 hover:bg-white/10"
+              className="rounded-full bg-emerald-400 px-4 py-2 text-[12px] font-semibold uppercase tracking-wide text-slate-900 transition hover:bg-emerald-300"
             >
-              Create account
+              Sign up free
             </Link>
           </div>
-          <div className="mt-6 flex flex-wrap items-center gap-3 text-base text-slate-200">
-            <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
-              10 years in elite sport
-            </span>
-            <span>Trusted by academies, pro clubs, and high-performance labs.</span>
+        </div>
+
+        <div className="flex flex-col items-start gap-4 py-10 sm:py-16">
+          <span className="rounded-full border border-white/30 bg-white/15 px-4 py-2 text-[12px] font-semibold uppercase tracking-[0.3em] text-white/80">
+            Movesbook life
+          </span>
+          <h1 className="text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
+            Track, plan, and grow every athlete and club.
+          </h1>
+          <p className="max-w-3xl text-base text-white/80 sm:text-lg">
+            From single athletes to pro clubs, Movesbook brings training plans, analytics, and collaboration under one modern
+            workspace.
+          </p>
+          <div className="flex flex-wrap items-center gap-4">
+            <Link
+              href="/signup"
+              className="rounded-full bg-emerald-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-400/40 transition hover:bg-emerald-300"
+            >
+              Start free trial
+            </Link>
+            <Link
+              href="/login"
+              className="rounded-full border border-white/60 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+            >
+              Demo login
+            </Link>
           </div>
         </div>
-      </div>
+      </header>
+
+      <nav className="relative z-10 flex h-14 flex-wrap items-center border-t border-white/20 bg-black/40 px-4 text-xs font-semibold uppercase tracking-wide text-white/75 backdrop-blur sm:px-8 lg:px-12">
+        <Tab label="Athletes" active />
+        <Tab label="Coaches" />
+        <Tab label="Teams" />
+        <Tab label="Groups" />
+        <Tab label="Sport Clubs" />
+        <Tab label="Club Management" />
+        <Tab label="News" />
+        <Tab label="Sell-Buy" />
+        <Tab label="Job offers" />
+        <Tab label="Promote yourself" />
+        <Tab label="Our Shop" />
+      </nav>
     </section>
+  );
+}
+
+function Tab({ label, active }: { label: string; active?: boolean }) {
+  return (
+    <button
+      type="button"
+      className={`h-full px-4 transition ${
+        active ? "text-white" : "text-white/70 hover:text-white"
+      }`}
+    >
+      {label}
+    </button>
   );
 }
 
